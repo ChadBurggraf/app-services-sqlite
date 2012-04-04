@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ApplicationServices.SQLite", "System.ApplicationServices.SQLite\System.ApplicationServices.SQLite.csproj", "{CC75CFE7-7819-494B-B9DC-31202B78727F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{848A9846-D0F4-4B4E-9146-E00BC6E80F63}"
+	ProjectSection(SolutionItems) = preProject
+		..\Build.proj = ..\Build.proj
+		..\LICENSE.txt = ..\LICENSE.txt
+		Local.testsettings = Local.testsettings
+		..\README.md = ..\README.md
+		SolutionInfo.cs = SolutionInfo.cs
+		System.ApplicationServices.SQLite.vsmdi = System.ApplicationServices.SQLite.vsmdi
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "System.ApplicationServices.SQLite.Test", "System.ApplicationServices.SQLite.Test\System.ApplicationServices.SQLite.Test.csproj", "{9448A57E-C412-409C-9C0E-4FB7A12DC296}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = System.ApplicationServices.SQLite.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC75CFE7-7819-494B-B9DC-31202B78727F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC75CFE7-7819-494B-B9DC-31202B78727F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC75CFE7-7819-494B-B9DC-31202B78727F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC75CFE7-7819-494B-B9DC-31202B78727F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9448A57E-C412-409C-9C0E-4FB7A12DC296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9448A57E-C412-409C-9C0E-4FB7A12DC296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9448A57E-C412-409C-9C0E-4FB7A12DC296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9448A57E-C412-409C-9C0E-4FB7A12DC296}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

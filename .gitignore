@@ -1,0 +1,7 @@
+*.suo
+*.csproj.user
+*.snk
+bin/
+Build/
+obj/
+TestResults/

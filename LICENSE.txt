@@ -1,0 +1,4 @@
+The Code Project Open License (CPOL) 1.02
+
+Full license text can be found at:
+http://www.codeproject.com/info/cpol10.aspx

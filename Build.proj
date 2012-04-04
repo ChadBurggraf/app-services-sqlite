@@ -1,0 +1,36 @@
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>$(MSBuildProjectDirectory)\Source\System.ApplicationServices.SQLite.snk</AssemblyOriginatorKeyFile>
+    <BuildDir>$(MSBuildProjectDirectory)\Build</BuildDir>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <EnableSigning>true</EnableSigning>
+    <SourceDir>$(MSBuildProjectDirectory)\Source</SourceDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="Exists('$(AssemblyOriginatorKeyFile)') And '$(EnableSigning)' == 'true' And '$(Configuration)' == 'Release'">
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompileProjects Include="$(SourceDir)\System.ApplicationServices.SQLite\System.ApplicationServices.SQLite.csproj"/>
+  </ItemGroup>
+
+  <Target Name="Build" DependsOnTargets="CleanAll;Compile">
+    <MakeDir Directories="$(BuildDir)"/>
+    <ItemGroup>
+      <OutputFiles Include="$(SourceDir)\System.ApplicationServices.SQLite\bin\$(Configuration)\System.ApplicationServices.SQLite.*"/>
+    </ItemGroup>
+    <Copy SourceFiles="@(OutputFiles)" DestinationFolder="$(BuildDir)"/>
+  </Target>
+
+  <Target Name="Clean">
+    <MSBuild Projects="@(CompileProjects)" Targets="Clean" Properties="Configuration=$(Configuration)"/>
+  </Target>
+
+  <Target Name="CleanAll" DependsOnTargets="Clean">
+    <RemoveDir Directories="$(BuildDir)"/>
+  </Target>
+
+  <Target Name="Compile">
+    <MSBuild Projects="@(CompileProjects)" Properties="Configuration=$(Configuration);SignAssembly=$(SignAssembly);AssemblyOriginatorKeyFile=$(AssemblyOriginatorKeyFile)"/>
+  </Target>
+</Project>
