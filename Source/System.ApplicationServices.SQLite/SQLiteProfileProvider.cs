@@ -127,7 +127,9 @@ namespace System.ApplicationServices.SQLite
 			{
 				throw new ProviderException("Connection String is empty for SQLiteProfileProvider. Check the web configuration file (web.config).");
 			}
+
 			_connectionString = DatabaseUtility.NormalizeConnectionString(connectionStringSettings.ConnectionString);
+            DatabaseUtility.EnsureDatabase(_connectionString);
 
 			if (config["applicationName"] == null || config["applicationName"].Trim() == "")
 			{
@@ -160,7 +162,6 @@ namespace System.ApplicationServices.SQLite
 			}
 
 			// Verify a record exists in the application table.
-            DatabaseUtility.EnsureDatabase(_connectionString);
 			VerifyApplication();
 		}
 

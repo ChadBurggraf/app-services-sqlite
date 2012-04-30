@@ -283,6 +283,7 @@ namespace System.ApplicationServices.SQLite
             }
 
             _connectionString = DatabaseUtility.NormalizeConnectionString(ConnectionStringSettings.ConnectionString);
+            DatabaseUtility.EnsureDatabase(_connectionString);
 
             // Get application name
             if (config["applicationName"] == null || config["applicationName"].Trim() == "")
@@ -320,7 +321,6 @@ namespace System.ApplicationServices.SQLite
             }
 
             // Verify a record exists in the application table.
-            DatabaseUtility.EnsureDatabase(_connectionString);
             VerifyApplication();
         }
 
